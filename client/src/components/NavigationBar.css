@@ -1,0 +1,39 @@
+/* NavigationBar.css */
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+button.navbu:hover {
+    color:black;
+    background-color: rgb(239, 120, 140);;
+}
+
+button i {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    button {
+        margin: 5px;
+    }
+}

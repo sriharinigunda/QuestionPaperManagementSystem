@@ -1,0 +1,272 @@
+/* Background image */
+.content {
+  background-image: url('https://img.freepik.com/free-photo/top-view-books-with-copy-space_23-2148827187.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* General styling */
+.branch-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+.custom-btn {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #3498db;
+  outline: none;
+  cursor: pointer;
+  background: #3498db;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.custom-btn:hover {
+  background: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-3px);
+}
+
+.custom-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: all 0.5s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.custom-btn:hover::before {
+  width: 300%;
+  height: 300%;
+  transform: translate(-50%, -50%);
+}
+/* HomePage.css */
+
+/* Add styles for ModalImage */
+.react-modal-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+/* Styles for the image within ModalImage */
+.react-modal-image img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Styles for the close icon */
+.react-modal-image__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Add hover effect for close icon */
+.react-modal-image__close:hover {
+  color: #ccc;
+}
+
+/* Add styles for the overlay background */
+.react-modal-image__modal {
+  position: relative;
+  max-width: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  overflow: auto;
+}
+
+
+/* Return button */
+.return-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  float: right;
+}
+
+
+/* Filter container */
+.filter-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.filter-group h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+/* Filter Button */
+.filter-button-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #5349d1;
+}
+
+/* Images Container */
+.images-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.icon-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  height: 40px;
+}
+
+.image-wrapper:hover .icon-container {
+  opacity: 1;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  visibility: hidden;
+  transition: visibility 0.3s ease;
+}
+
+.image-wrapper:hover .icon {
+  visibility: visible;
+}
+
+
+.icon.favorite {
+  color: red; /* Change the color to red */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 10px;
+  }
+
+  .branch-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .filter-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .images-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .branch-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .filter-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .images-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
